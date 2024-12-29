@@ -4,13 +4,16 @@ FROM python:3.12-slim
 # Set the working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container
-COPY . /app
+# Copy the requirements file into the container
+COPY requirements.txt .
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port 8000 for Flask app
+# Copy the current directory contents into the container
+COPY . .
+
+# Expose port 8501 for Flask app
 EXPOSE 8000
 
 # Run the app
