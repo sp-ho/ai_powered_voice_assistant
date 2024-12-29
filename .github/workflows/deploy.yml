@@ -26,11 +26,6 @@ jobs:
       - name: Install Elastic Beanstalk CLI
         run: pip install awsebcli
 
-      # Step 4: Initialize Elastic Beanstalk
-      - name: Initialize Elastic Beanstalk
-        run: |
-          eb init -p python-3.12 ai-voice-assistant-test --region ${{ secrets.AWS_REGION }} --interactive=false
-
-      # Step 5: Deploy to Elastic Beanstalk
+      # Step 4: Deploy to Elastic Beanstalk
       - name: Deploy to Elastic Beanstalk
         run: eb deploy
