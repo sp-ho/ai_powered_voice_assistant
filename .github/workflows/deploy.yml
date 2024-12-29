@@ -1,0 +1,34 @@
+name: Deploy to Elastic Beanstalk
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up AWS credentials
+      - name: Configure AWS CLI
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # Step 3: Install Elastic Beanstalk CLI
+      - name: Install Elastic Beanstalk CLI
+        run: |
+          pip install awsebcli
+
+      # Step 4: Deploy to Elastic Beanstalk
+      - name: Deploy Application
+        run: |
+          eb init -p python-3.8 ai-voice-assistant-test --region ${{ secrets.AWS_REGION }} --interactive
+          eb deploy
