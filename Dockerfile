@@ -11,10 +11,16 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the current directory contents into the container
-COPY . .
+COPY ./app .
+
+# Set environment variables (optional)
+ENV FLASK_APP=application.py
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=8080
 
 # Expose port 8501 for Flask app
-EXPOSE 8000
+EXPOSE 8080
 
 # Run the app
-CMD ["python", "application.py"]
+# CMD ["python", "application.py"]
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "application:application"]

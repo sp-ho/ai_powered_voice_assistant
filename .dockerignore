@@ -1,8 +1,36 @@
+# Byte-compiled files
 __pycache__/
 *.pyc
 *.pyo
-my_env/
-.env
 
-# Ignore Elastic Beanstalk configuration
+# Virtual environment
+my_env/
+
+# Local configuration files
+.env
+*.log
+
+# Elastic Beanstalk configuration
 .elasticbeanstalk/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# IDE/Editor configuration
+.vscode/
+.idea/
+
+# Docker overrides
+docker-compose.override.yml
+
+# Documentation
+*.md

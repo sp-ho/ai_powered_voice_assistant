@@ -1,14 +1,14 @@
 branch-defaults:
   main:
-    environment: Ai-voice-assistant-test-env
+    environment: Flask-app-env
 environment-defaults:
-  Ai-voice-assistant-test-env:
+  Flask-app-env:
     branch: null
     repository: null
 global:
-  application_name: ai-voice-assistant-test
+  application_name: flask-app
   default_ec2_keyname: null
-  default_platform: Python 3.12 running on 64bit Amazon Linux 2023
+  default_platform: Docker running on 64bit Amazon Linux 2023
   default_region: us-east-2
   include_git_submodules: true
   instance_profile: null
