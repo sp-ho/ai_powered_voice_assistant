@@ -41,14 +41,14 @@ INSTANCE_TTS=<your_ibm_tts_instance>
 
 ## Setup and Installation
 
-### 1. Clone the Repository
+**1. Clone the Repository**
 
 ```bash
 git clone https://github.com/sp-ho/ai_powered_voice_assistant.git
 cd ai_powered_voice_assistant
 ```
 
-### 2. Install Dependencies
+**2. Install Dependencies**
 
 Create a virtual environment and install the dependencies:
 
@@ -58,7 +58,7 @@ source my_env/bin/activate  # On Windows: my_env\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 3. Run Locally
+**3. Run Locally**
 
 ```bash
 python application.py
@@ -69,13 +69,13 @@ Access the app at: http://localhost:8080
 
 ## Using Docker
 
-### 1. Build the Docker Image
+**1. Build the Docker Image**
 
 ```bash
 docker build -t flask-app .
 ```
 
-### 2. Run the Docker Container
+**2. Run the Docker Container**
 
 ```bash
 docker run -p 8080:8080 flask-app
@@ -86,19 +86,19 @@ Access the app at: http://localhost:8080
 
 ## Deployment to AWS Elastic Beanstalk
 
-### 1. Initialize Elastic Beanstalk
+**1. Initialize Elastic Beanstalk**
 
 ```bash
 eb init -p docker flask-app-env --region <your-region>
 ```
 
-### 2. Deploy the Application
+**2. Deploy the Application**
 
 ```bash
 eb create flask-app-env
 ```
 
-### 3. Update Deployment
+**3. Update Deployment**
 
 For future updates:
 
