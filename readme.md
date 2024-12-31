@@ -2,6 +2,8 @@
 
 This is an AI-powered voice assistant application that uses the **OpenAI API** for generating responses and the **IBM Watson API** for speech-to-text (STT) and text-to-speech (TTS) capabilities. The application is built with Flask and can be deployed using Docker or AWS Elastic Beanstalk.
 
+Live application: http://flask-app-env.eba-emnvvbm6.us-east-2.elasticbeanstalk.com/
+
 ## Features
 
 - **Speech-to-Text (STT)**: Converts user speech to text using IBM Watson STT API.
